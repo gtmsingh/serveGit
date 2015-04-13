@@ -1,4 +1,20 @@
 <?php
+function redirectWithError($var, $msg, $to) {
+	$_SESSION["error"] = [
+		$var => $msg
+	];
+	header("LOCATION: $to");
+	die();
+}
+
+function redirectWithMessage($var, $msg, $to) {
+	$_SESSION["message"] = [
+		$var => $msg
+	];
+	header("LOCATION: $to");
+	die();
+}
+
 function isVariablesSet($vars) {
 
 	foreach ($vars as $var) {

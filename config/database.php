@@ -5,6 +5,8 @@ $user = "root";
 $database = "ServeGit";
 $password = "";
 
-$link = mysqli_connect($host.":".$port, $user, $password, $database)
-					or die("Error Database connection: ".mysqli_connect_error());
+$link = new mysqli($host.":".$port, $user, $password, $database);
+if($link->connect_error) {
+	die("Error Database connection: ".$link->connect_error);
+}
 ?>

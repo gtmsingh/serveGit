@@ -11,7 +11,7 @@ if(isset($_SESSION["error"])) {
 		<link rel="stylesheet" href="resources/css/bootstrap.min.css">
 		<link rel="stylesheet" href="resources/css/layout.css">
 	</head>
-	<body>
+	<body class="background">
 		<div class="container text-center col-md-offset-3 col-md-6">
 			<?php
 			if (isset($message["others"])) {
