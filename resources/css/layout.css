@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 .voffset  { margin-top: 2px; }
 .voffset1 { margin-top: 5px; }
 .voffset2 { margin-top: 10px; }
+=======
+.voffset  { margin-top: 0px; }
+.voffset1 { margin-bottom: 15px; }
+.voffset2 { padding-top: 10px; }
+>>>>>>> 9bc0e950d0eb320602e0814f4c2bb67b106b12a3
 .voffset3 { margin-top: 15px; }
 .voffset4 { margin-top: 30px; }
 .voffset5 { margin-top: 40px; }
@@ -12,3 +18,10 @@
 .background {
 	background-color: #ECECEA;
 }
+<<<<<<< HEAD
+=======
+
+.dropdown:hover .dropdown-menu {
+display: block;
+}
+>>>>>>> 9bc0e950d0eb320602e0814f4c2bb67b106b12a3
