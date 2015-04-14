@@ -1,0 +1,18 @@
+.voffset  { margin-top: 0px; }
+.voffset1 { margin-bottom: 15px; }
+.voffset2 { padding-top: 10px; }
+.voffset3 { margin-top: 15px; }
+.voffset4 { margin-top: 30px; }
+.voffset5 { margin-top: 40px; }
+.voffset6 { margin-top: 60px; }
+.voffset7 { margin-top: 80px; }
+.voffset8 { margin-top: 100px; }
+.voffset9 { margin-top: 150px; }
+
+.background {
+	background-color: #ECECEA;
+}
+
+.dropdown:hover .dropdown-menu {
+display: block;
+}
