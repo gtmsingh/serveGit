@@ -50,47 +50,6 @@ $dirs = array(
 								foreach ($dirs[$repos[0]] as $dir) {
 									echo $dir . "<br/>";
 								}
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-								echo "afdfnhsns<br/>";
-
 						echo '</div>';
 						
 						for ($i = 1; $i < $num_repo; $i++) {
