@@ -49,8 +49,7 @@ if(isset($_SESSION["error"])) {
 				?>
 				<legend>Register</legend>
 				<div class="form-group">
-<<<<<<< HEAD
-=======
+
 					<label for="first_name" class="col-sm-3 control-label">First Name</label>
 					<div class="col-sm-8">
 						<input type="text" name="username" class="form-control">
@@ -63,7 +62,7 @@ if(isset($_SESSION["error"])) {
 					</div>
 				</div>
 				<div class="form-group">
->>>>>>> 9bc0e950d0eb320602e0814f4c2bb67b106b12a3
+
 					<label for="username" class="col-sm-3 control-label">Username</label>
 					<div class="col-sm-8">
 						<input type="text" name="username" class="form-control">
