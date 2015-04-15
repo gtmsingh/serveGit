@@ -17,23 +17,6 @@ $dirs = array(
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-	<head>
-		<meta charset="UTF-8">
-		<title>Repositories</title>
-		<link rel="stylesheet" href="../resources/css/bootstrap.min.css">
-		<link rel="stylesheet" href="../resources/css/layout.css">
-	</head>
-	<body>
-		<div class="container">
-			<div id="header" class="container page-header text-center">
-				<div class="col-md-12">
-					<h1>Welcome to your own repos <button class="btn btn-primary pull-right btn-sm voffset2">New Repo</button></h1>
-				</div>
-			</div>
-			<div class="container">
-				<ul id="side-panel" class="nav nav-pills nav-stacked col-md-3">
-=======
 <head>
     <meta charset="utf-8">
     <title>Repositories</title>
@@ -77,7 +60,6 @@ $dirs = array(
 
 			<div class="container">
 				<ul id="side-panel" class="nav nav-pills nav-stacked col-md-3 voffset1">
->>>>>>> 9bc0e950d0eb320602e0814f4c2bb67b106b12a3
 					<?php
 					$num_repo = count($repos);
 					if($num_repo > 0)
@@ -89,11 +71,9 @@ $dirs = array(
 					}
 					?>
 				</ul>
-<<<<<<< HEAD
-				<div id="main-panel" class="container tab-content col-md-9 background" style="overflow: auto;">
-=======
+
 				<div id="main-panel" class="container tab-content col-md-9 background voffset2" style="overflow: auto;">
->>>>>>> 9bc0e950d0eb320602e0814f4c2bb67b106b12a3
+
 					<?php
 					if ($num_repo > 0) {
 						echo '<div class="tab-pane active" id="' . $repos[0] . '">';
