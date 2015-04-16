@@ -1,4 +1,7 @@
 <?php
+$node_server_ip = "192.168.30.128";
+$node_server_port = "8081";
+
 function redirectWithError($var, $msg, $to) {
 	$_SESSION["error"] = [
 		$var => $msg

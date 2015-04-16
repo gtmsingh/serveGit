@@ -11,6 +11,12 @@ else
 	sudo useradd --create-home -p $pass $username
 	if [ $? -eq 0 ];
 	then 
+		sudo mkdir -p /var/www/$username
+		chown $username /var/www/$username
+
+		chgrp $username /var/www/$username
+
+		
 		sudo rm -rf /home/$username/*
 		echo "User has been created!"
 		exit 0
