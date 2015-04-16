@@ -57,7 +57,7 @@ app.get('/changePassword/:username/:newPass', function(req, res) {
 			console.log('exec error: ' + error);
 			res.status(500).send({error: error});
 		} else {
-			res.status(200).send({success: "OK", url: username+"@"+host+":"+appName+".git"});
+			res.status(200).send({success: "OK"});
 		}
 	});
 })
