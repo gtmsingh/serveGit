@@ -65,9 +65,6 @@ if (isset($message["register"])) {
 						<label for="repo_url">Remote link: </label>
 						<span id="repo_url" name="repo_url"></span>
 					</div>
-					<div class="container" id="path">
-						
-					</div>
 					<div class="container background">
 						
 					</div>
