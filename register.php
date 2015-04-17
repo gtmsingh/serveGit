@@ -25,6 +25,8 @@ if($password == $password_repeat) {
 		redirectWithError("register", "Server Error", "index.php");
 	} else {
 		$_SESSION["uid"] = $link->insert_id;
+		$_SESSION["uname"] = $username;
+		
 		$curl = curl_init();
 		$data = json_encode(array(
 			"username" => $username,

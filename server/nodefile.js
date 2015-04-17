@@ -11,8 +11,12 @@ app.use(bodyParser.json());
 app.set('port', 8081);
 var rootPassword = "a";
 
-http.listen(app.get('port'), function() {
-	console.log("Started git node server");
+http.listen(app.get('port'), function(err) {
+	if(err) {
+		console.log("Error occured");
+	} else {
+		console.log("Started git node server on port " + app.get('port'));
+	}
 });
 
 app.post('/createUser', function(req, res) {
@@ -33,18 +37,19 @@ app.post('/createUser', function(req, res) {
 
 app.post('/createRepo', function(req, res) {
 	var username = req.body.username;
-	var appName = req.body.appName;
+	var repoName = req.body.repo_name;
 
-	console.log(username+" "+appName);
+	console.log(username+" "+repoName);
 	var host = req.get('host');
-	execFile('echo '+rootPassword+' | sudo -S ./createRepo.sh '+username +' '+ appName, function(error, stdout, stderr) {
+	host = ( host.match(/:/g) ) ? host.slice( 0, host.indexOf(":") ) : host;
+	execFile('echo '+rootPassword+' | sudo -S ./createRepo.sh '+username +' '+ repoName, function(error, stdout, stderr) {
 		console.log('stdout: ' + stdout);
 		console.log('stderr: ' + stderr);
 		if (error !== null) {
 			console.log('exec error: ' + error);
 			res.status(500).send({error: error});
 		} else {
-			res.status(200).send({success: "OK", url: username+"@"+host+":"+appName+".git"});
+			res.status(200).send({success: "OK", url: username+"@"+host+":"+repoName+".git"});
 		}
 	});
 })
@@ -79,26 +84,34 @@ app.post('/list', function(req, res) {
 			var list = {};
 			var i = 0;
 			files.map(function(file) {
-				return path.join(dir, file);
-			}).forEach(function(file) {
-				list[i] = {};
-				list[i]["name"] = file;
-				if(fs.statSync(default_dir+file).isFile()) {
-					list[i]["type"] = "file";
+				if(file === ".git") {
+					return file;
 				} else {
-					list[i]["type"] = "dir";
+					return path.join(dir, file);
 				}
-				i++;
+			}).forEach(function(file) {
+				if(file !== ".git") {
+					list[i] = {};
+					list[i]["name"] = file;
+					if(fs.statSync(default_dir+file).isFile()) {
+						list[i]["type"] = "file";
+					} else {
+						list[i]["type"] = "dir";
+					}
+					i++;
+				}
 			});
 			res.status(200).json(list);
 		}
 	})
 });
 
-app.get("*", function(req, res) {
-	res.status(400);
-})
+app.post('/getUrl', function(req, res) {
+	var username = req.body.username;
+	var repoName = req.body.repo_name;
 
-app.post("*", function(req, res) {
-	res.status(400);
+	var host = req.get('host');
+	host = ( host.match(/:/g) ) ? host.slice( 0, host.indexOf(":") ) : host;
+	
+	res.status(200).send({success: "OK", url: username+"@"+host+":"+repoName+".git"});
 })

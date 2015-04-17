@@ -3,6 +3,7 @@ session_start();
 if(isset($_SESSION["error"])) {
 	$message = $_SESSION["error"];
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

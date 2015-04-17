@@ -7,7 +7,7 @@ if( isVariablesSet([$_POST["email"], $_POST["password"]]) ) {
 	$email = $_POST["email"];
 	$password = $_POST["password"];
 
-	$query = "SELECT user_id, password FROM user_login WHERE email = '$email';";
+	$query = "SELECT * FROM user_login WHERE email = '$email';";
 	$result = $link->query($query);
 	if(! $result) {
 		redirectWithError("login", "Server Error", "index.php");
@@ -19,7 +19,10 @@ if( isVariablesSet([$_POST["email"], $_POST["password"]]) ) {
 			if($row["password"] == $password) {
 
 				$_SESSION["uid"] = $row["user_id"];
+				$_SESSION["uname"] = $row["username"];
 				header("Location: ./user/repo.php"); die();
+			} else {
+				redirectWithError("login", "Login details incorrect", "index.php");
 			}
 		}
 	}
